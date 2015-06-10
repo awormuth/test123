@@ -42,6 +42,9 @@
                     <li class="active">
                         <a href="index.html"><i class="fa fa-th-large"></i> <span class="nav-label">Dashboard</span></a>
                     </li>
+                    <li>
+                        <a href="calculators.html"><i class="fa fa-calculator"></i> <span class="nav-label">Calculators</span></a>
+                    </li>
                 </ul>
 
             </div>
@@ -54,7 +57,10 @@
             <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
             <form role="search" class="navbar-form-custom" method="post" action="search_results.html">
                 <div class="form-group">
-                    <input data-toggle="modal" data-target="#patientModal" type="text" placeholder="Search for patients..." class="form-control" name="top-search" id="top-search">
+                    <a class="minimalize-styl-2 btn btn-primary " data-toggle="modal" data-target="#patientModal" href="#"><i class="fa fa-user"></i> Find Patient</a>
+<!--                     <button data-toggle="modal" data-target="#patientModal" type="text" class="btn btn-primary minimalize-styl-2" name="" id="find-pt">
+                        Find a Patient
+                    </button> -->
                 </div>
             </form>
         </div>
@@ -116,80 +122,201 @@
 
                     <div class="col-sm-3">
                         <h2><span class="patientName">Jared Goodner</span></h2>
-                        <small><span class="patientDOB">5/18/93</span> | <span class="patientGender">M</span> | <span class="patientWeight">160lb</span> | <span class="patientHeight">6'0"</span></small>
+                        <small><span class="patientDOB">5/18/93</span> | <span class="patientGender">M</span> | <span class="patientWeight">160lb</span> | <span class="patientHeight">6'0"</span>
+                            | <span class="patientAge">28y</span></small>
                         <ul class="list-group clear-list m-t">
                             <li class="list-group-item fist-item">
-                                <span class="pull-right physicianName">
-                                    Khemani Robinder
-                                </span>
+                                <input class="pull-right physicianName" value="Christopher Newth"></input>
                                 <span class="label label-success"></span> Physician
                             </li>
                             <li class="list-group-item fist-item">
-                                <span class="pull-right admitDate">
-                                    05/06/2015 15:41
-                                </span>
+                                <input class="pull-right residentName" value="Alex Wormuth"></input>
+                                <span class="label label-success"></span> Resident
+                            </li>
+                            <li class="list-group-item fist-item">
+                                <input class="pull-right admitDate" value="05/06/2015 15:41"></input>
                                 <span class="label label-success"></span> ICU Admit
                             </li>
                             <li class="list-group-item fist-item">
-                                <span class="pull-right serviceName">
-                                    PICU
-                                </span>
+                                <input class="pull-right serviceName" value="PICU"></input>
                                 <span class="label label-success"></span> Service
                             </li>
                             <li class="list-group-item fist-item">
-                                <span class="pull-right bedLoc">
-                                    3E2-3117-A
-                                </span>
+                                <input class="pull-right bedLoc" value="3E2-3117-A"></input>
                                 <span class="label label-success"></span> ICU Bed
                             </li>
+                            <li class="list-group-item fist-item">
+                                <input class="pull-right los" value="4"></input>
+                                <span class="label label-success"></span> LOS (days)
+                            </li>
+                            <li class="list-group-item fist-item">
+                                <input class="pull-right los" value="120">/input>
+                                <span class="label label-success"></span> Pred. Wt. (kg)
+                            </li>
+                            <li class="list-group-item fist-item">
+                                <input class="pull-right los" value="1.2"></input>
+                                <span class="label label-success"></span> Ulna Length
+                            </li>
                         </ul>
+                        <button class="btn btn-primary col-xs-12" type="submit">Evaluate</button>
                     </div>
-                    <div class="col-sm-6">
-                        <div class="flot-chart dashboard-chart">
-                            <div class="flot-chart-content" id="flot-dashboard-chart"></div>
-                        </div>
-                        <div class="row text-left">
-                            <div class="col-xs-4">
-                                <div class=" m-l-md">
-                                <span class="h4 font-bold m-t block">$ 406,100</span>
-                                <small class="text-muted m-b block">Sales marketing report</small>
+
+
+                    <div class="col-lg-9">
+                        <div class="panel blank-panel">
+
+                            <div class="panel-heading">
+                                <div class="panel-options">
+
+                                    <ul class="nav nav-tabs">
+                                        <li class="active"><a data-toggle="tab" href="#tab-1" aria-expanded="true">Visualize</a></li>
+                                        <li class=""><a data-toggle="tab" href="#tab-2" aria-expanded="false">Ventilator Settings</a></li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="col-xs-4">
-                                <span class="h4 font-bold m-t block">$ 150,401</span>
-                                <small class="text-muted m-b block">Annual sales revenue</small>
-                            </div>
-                            <div class="col-xs-4">
-                                <span class="h4 font-bold m-t block">$ 16,822</span>
-                                <small class="text-muted m-b block">Half-year revenue margin</small>
+
+                            <div class="panel-body">
+
+                                <div class="tab-content">
+                                    <div id="tab-1" class="tab-pane active">
+                                        <div class="col-sm-12">
+                                            <div class="flot-chart dashboard-chart">
+                                                <div class="flot-chart-content" id="flot-dashboard-chart"></div>
+                                            </div>
+                                            <div class="row text-left">
+                            <!--                             <div class="col-xs-4">
+                                                    <div class=" m-l-md">
+                                                    <span class="h4 font-bold m-t block">$ 406,100</span>
+                                                    <small class="text-muted m-b block">Sales marketing report</small>
+                                                    </div>
+                                                </div> -->
+                                                <div class="col-xs-4 col-xs-offset-4" style="text-align:center;">
+                                                    <span class="h4 font-bold m-t block">Blood Pressure</span>
+                                                </div>
+                            <!--                             <div class="col-xs-4">
+                                                    <span class="h4 font-bold m-t block">$ 16,822</span>
+                                                    <small class="text-muted m-b block">Half-year revenue margin</small>
+                                                </div> -->
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="tab-2" class="tab-pane">
+                                        <div class="col-sm-12">
+                                            <div class="ibox-content" style="border:0px">
+                                                <form class="form-horizontal">
+                                                    <div class="form-group">
+                                                        <div class="radio col-sm-3"><label> <input type="radio" checked="" value="option1" id="optionsRadios1" name="optionsRadios"> Volume Control </label></div>
+                                                        <div class="radio col-sm-3"><label> <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> PRVC </label></div>
+                                                        <div class="radio col-sm-3"><label> <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> High Frequency Oscillation </label></div>
+                                                        <div class="radio col-sm-3"><label> <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> Pressure Control </label></div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-lg-2 control-label">Ventilator Rate</label>
+                                                        <div class="col-lg-2"><input type="email" class="form-control">
+                                                        </div>
+                                                        <label class="col-lg-2 control-label">VTex(ml/kg)</label>
+                                                        <div class="col-lg-2"><input type="email" class="form-control">
+                                                        </div>
+                                                        <label class="col-lg-2 control-label">PIP</label>
+                                                        <div class="col-lg-2"><input type="email" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-lg-2 control-label">PEEP</label>
+                                                        <div class="col-lg-2"><input type="email" class="form-control">
+                                                        </div>
+                                                        <label class="col-lg-2 control-label">MAP</label>
+                                                        <div class="col-lg-2"><input type="email" class="form-control">
+                                                        </div>
+                                                        <label class="col-lg-2 control-label">Trach Leak(%)</label>
+                                                        <div class="col-lg-2"><input type="email" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-lg-2 control-label">Press. Support</label>
+                                                        <div class="col-lg-2"><input type="email" class="form-control">
+                                                        </div>
+                                                        <label class="col-lg-2 control-label">Ptp Pplat</label>
+                                                        <div class="col-lg-2"><input type="email" class="form-control">
+                                                        </div>
+                                                        <label class="col-lg-2 control-label">Ptp PEEP</label>
+                                                        <div class="col-lg-2"><input type="email" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-lg-2 control-label">pH</label>
+                                                        <div class="col-lg-2"><input type="email" class="form-control">
+                                                        </div>
+                                                        <label class="col-lg-2 control-label">PCO2</label>
+                                                        <div class="col-lg-2"><input type="email" class="form-control">
+                                                        </div>
+                                                        <label class="col-lg-2 control-label">PetCO2</label>
+                                                        <div class="col-lg-2"><input type="email" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-lg-2 control-label">FiO2</label>
+                                                        <div class="col-lg-2"><input type="email" class="form-control">
+                                                        </div>
+                                                        <label class="col-lg-2 control-label">PaO2</label>
+                                                        <div class="col-lg-2"><input type="email" class="form-control">
+                                                        </div>
+                                                        <label class="col-lg-2 control-label">SpO2</label>
+                                                        <div class="col-lg-2"><input type="email" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label class="col-lg-2 control-label">Delta Pes</label>
+                                                        <div class="col-lg-2"><input type="email" class="form-control">
+                                                        </div>
+                                                        <label class="col-lg-2 control-label">sRRaw</label>
+                                                        <div class="col-lg-2"><input type="email" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="form-group">
+                                                        <a style="margin-right:10px;" class="btn btn-primary col-lg-3" href="#modal-form">Simulate</a>
+                                                        <a class="btn btn-primary col-lg-3" href="#modal-form">Load Intervention Hx</a>
+                                                    </div> -->
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
 
                         </div>
                     </div>
-                    <div class="col-sm-3">
+
+                    
+                   <!--  <div class="col-sm-3">
                         <div class="statistic-box">
-                        <h4>
-                            Project Beta progress
-                        </h4>
-                        <p>
-                            You have two project with not compleated task.
-                        </p>
-                            <div class="row text-center">
-                                <div class="col-lg-6">
-                                    <canvas id="polarChart" width="80" height="80"></canvas>
-                                    <h5 >Kolter</h5>
+                            <button class="btn btn-primary" type="submit">Button</button>
+                            h4>
+                                Project Beta progress
+                            </h4>
+
+                            <p>
+                                You have two project with not compleated task.
+                            </p>
+                                <div class="row text-center">
+                                    <div class="col-lg-6">
+                                        <canvas id="polarChart" width="80" height="80"></canvas>
+                                        <h5 >Kolter</h5>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <canvas id="doughnutChart" width="78" height="78"></canvas>
+                                        <h5 >Maxtor</h5>
+                                    </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <canvas id="doughnutChart" width="78" height="78"></canvas>
-                                    <h5 >Maxtor</h5>
+                                <div class="m-t">
+                                    <small>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
                                 </div>
-                            </div>
-                            <div class="m-t">
-                                <small>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</small>
-                            </div>
 
                         </div>
-                    </div>
+                    </div> -->
 
             </div>
         <div class="row">
@@ -472,6 +599,12 @@
 
     <script>
         $(document).ready(function() {
+            // go to lockscreen
+            $("body").keydown(function(e){
+                if (e.keyCode == 76 && e.shiftKey){
+                    window.location.href = "lockscreen.html";
+                }
+            });
             // setTimeout(function() {
             //     $.gritter.add({
             //         title: 'You have two new messages',
