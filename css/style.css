@@ -1263,7 +1263,7 @@ a.list-group-item.active:focus {
 }
 .flot-chart.dashboard-chart {
   display: block;
-  height: 180px;
+  height: 300px;
   margin-top: 40px;
 }
 .flot-chart-content {
